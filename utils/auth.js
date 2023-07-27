@@ -15,9 +15,8 @@ const auth = (handler) => {
     }
 
     try {
-      const decode = jwt.decode(token, { complete: [true] });
-      // const decoded = jwt.verify(token, secret_key, { algorithms: ["ES256"] });
-      req.body.email = decode.email;
+      const decoded = jwt.verify(token, secret_key, { algorithms: "HS256" });
+      req.body.email = decoded.email;
       return handler(req, res);
     } catch (err) {
       return res
