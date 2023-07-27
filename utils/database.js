@@ -10,7 +10,7 @@ const url = `mongodb+srv://${USER_NAME}:${USER_PASSWD}@${HOST_NAME}/${DB_NAME}?r
 const connectDB = async () => {
   try {
     // Connect the client to the server	(optional starting in v4.7)
-    await mongoose.connect(uri);
+    await mongoose.connect(url);
     console.log("Success: Connected to MongoDB");
   } catch (err) {
     console.log("Failure: Unconnected to MongoDB");
