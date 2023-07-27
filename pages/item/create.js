@@ -33,9 +33,7 @@ const CreateItem = () => {
   };
 
   const loginUser = useAuth();
-  console.log(useAuth());
-  //   const loginUser = useAuth();
-
+  console.log(loginUser);
   if (loginUser) {
     return (
       <div>
